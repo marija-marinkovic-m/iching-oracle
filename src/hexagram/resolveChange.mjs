@@ -1,6 +1,6 @@
 const DESCRIPTIONS = {
-  0: 'No changes. This is a static hexagram.',
-  1: 'One change. This is a dynamic hexagram.',
+  0: 'No changes.',
+  1: 'One change.',
   2: 'Two changes. The upper line prevails.',
   3: 'Three changes. The middle line prevails.',
   4: 'Four changes. The upper, non-changing line prevails.',

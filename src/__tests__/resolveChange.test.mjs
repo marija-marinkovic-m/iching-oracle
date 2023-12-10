@@ -1,6 +1,6 @@
 import { test, expect } from '@jest/globals'
-import Hexagram from '../Hexagram.mjs'
-import resolveChange, { getPrevailingLine } from '../resolveChange.mjs'
+import Hexagram from '../hexagram/Hexagram.mjs'
+import resolveChange, { getPrevailingLine } from '../hexagram/resolveChange.mjs'
 
 const hexagram1 = new Hexagram([
   { binary: 0, old: false, position: 1 },
@@ -24,8 +24,8 @@ test('resolveChange returns a change object', () => {
   const result1 = resolveChange(hexagram1)
   const result2 = resolveChange(hexagram2)
 
-  expect(result1.description).toBe('One change. This is a dynamic hexagram.')
-  expect(result2.description).toBe('No changes. This is a static hexagram.')
+  expect(result1.description).toBe('One change.')
+  expect(result2.description).toBe('No changes.')
 })
 
 test('getPrevailingLine returns the first old yin line', () => {

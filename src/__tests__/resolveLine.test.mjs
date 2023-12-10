@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals'
-import resolveLine from '../resolveLine.mjs'
+import resolveLine from '../hexagram/resolveLine.mjs'
 
 // Mock Math.random
 const mockMath = Object.create(global.Math)

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --experimental-vm-modules main.mjs",
     "lint": "eslint .",
-    "test": "node --experimental-vm-modules --trace-warnings node_modules/jest/bin/jest.js"
+    "test": "node --trace-warnings --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "",
   "license": "ISC",
