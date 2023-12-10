@@ -31,7 +31,6 @@ class Hexagram {
       return `${this.definition.kingWen}. ${this.definition.chars} ${this.definition.title}`
     } catch (error) {
       logger.error(this.hexagram)
-      return `Error: Could not find hexagram definition. ID: ${this.binary}`
     }
   }
 
@@ -40,8 +39,11 @@ class Hexagram {
       return this.definition.judgement.join('\n')
     } catch (error) {
       logger.error({ id: this.binary, ...this.hexagram })
-      return `Error: Could not find hexagram judgement. ID: ${this.binary}`
     }
+  }
+
+  get kingWen () {
+    return this.definition?.kingWen ?? null
   }
 
   get length () {
@@ -49,7 +51,7 @@ class Hexagram {
   }
 
   get definition () {
-    return this.hexagramDefinition
+    return this.hexagramDefinition ?? null
   }
 
   get lines () {

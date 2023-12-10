@@ -13,4 +13,14 @@ const generateHexagram = () => {
   return new Hexagram(hexagram)
 }
 
+export const generateHexagramFromBinary = (binary, changingLines) => {
+  if (!binary) throw new Error('Binary is required')
+  const hexagram = binary.split('')
+    .map((binary, position) => {
+      const old = changingLines?.length ? changingLines.includes(position + 1) : false
+      return { binary, position: position + 1, old }
+    })
+  return new Hexagram(hexagram)
+}
+
 export default generateHexagram
