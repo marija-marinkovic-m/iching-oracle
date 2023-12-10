@@ -1,6 +1,6 @@
 # Random I Ching Oracle
 
-This project generates random hexagrams using the yarrow stalk method of the I Ching, an ancient Chinese oracle. The I Ching has 64 hexagrams that offer guidance for different situations. By creating a hexagram, you can explore the mysteries of the universe.
+This project generates random hexagrams using the yarrow stalk method of the I Ching, an ancient Chinese oracle. The I Ching has 64 hexagrams that offer guidance for different situations. By creating a hexagram, you can explore the mysteries of the universe. 👻
 
 You can save your hexagrams on your machine and see them in a colorful console.
 
