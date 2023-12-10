@@ -56,14 +56,9 @@ class Enquiry {
         name: 'question',
         message: 'What is your question?'
       }).then((prompt) => {
-        if (!prompt?.question) {
-          reject(new Error('You must provide a question.'))
-          return
-        }
-        console.log(`You asked: ${prompt.question}`)
-        console.log('I Ching replies:')
-
-        resolve(prompt.question.replace(/[^a-zA-Z0-9 ]/g, ''))
+        const question = prompt.question.replace(/[^a-zA-Z0-9 ]/g, '') || 'General Reading'
+        console.log(`You asked: ${chalck.italic(question)}`)
+        resolve(question)
       })
     })
   }

@@ -4,19 +4,23 @@ import getChangeData from '../hexagram/getChangeData.mjs'
 const printHexagram = (hexagram) => {
   const { change, changingLines } = getChangeData(hexagram)
 
-  console.log(chalk.blue(hexagram.title))
-  console.log(chalk.green(hexagram.judgement))
-  console.log(chalk.red(change.description))
+  const content = []
+
+  content.push(chalk.blue(hexagram.title))
+  content.push(chalk.green(hexagram.judgement))
+  content.push(chalk.red(change.description))
   if (change.line) {
     if (hexagram.changes.length > 1) {
-      console.log(
+      content.push(
         chalk.bgGray(changingLines)
       )
     }
-    console.log(chalk.cyan(hexagram.line(change.line)))
-    console.log(chalk.magenta(change.changedHexagram.title))
-    console.log(chalk.bgCyanBright(change.changedHexagram.judgement))
+    content.push(chalk.cyan(hexagram.line(change.line)))
+    content.push(chalk.magenta(change.changedHexagram.title))
+    content.push(chalk.bgCyanBright(change.changedHexagram.judgement))
   }
+
+  console.table(content.join('\n'))
 }
 
 export default printHexagram
