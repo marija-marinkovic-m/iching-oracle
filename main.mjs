@@ -6,6 +6,11 @@ import askFlow from './src/flows/ask.mjs'
 
 const enquiry = new Enquiry()
 
+/**
+ * The main function of the program.
+ * @param {boolean} withGreeting - Whether to display a greeting message.
+ * @returns {Promise<void>} - A promise that resolves when the main function completes.
+ */
 const main = async (withGreeting = false) => {
   try {
     if (withGreeting) console.log(chalk.bgGreenBright('🔮 Welcome to the I Ching!'))

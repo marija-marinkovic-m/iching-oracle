@@ -1,6 +1,10 @@
 import inquirer from 'inquirer'
 import chalck from 'chalk'
 
+/**
+ * Represents an Enquiry object.
+ * @class
+ */
 class Enquiry {
   ASK_KEY = 'ask'
   READ_KEY = 'read'

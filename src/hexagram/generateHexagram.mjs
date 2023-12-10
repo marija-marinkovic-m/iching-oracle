@@ -13,6 +13,14 @@ const generateHexagram = () => {
   return new Hexagram(hexagram)
 }
 
+/**
+ * Generates a hexagram from a binary string.
+ *
+ * @param {string} binary - The binary string representing the hexagram.
+ * @param {number[]} changingLines - An array of positions of the changing lines.
+ * @returns {Hexagram} The generated hexagram.
+ * @throws {Error} If the binary string is empty or undefined.
+ */
 export const generateHexagramFromBinary = (binary, changingLines) => {
   if (!binary) throw new Error('Binary is required')
   const hexagram = binary.split('')

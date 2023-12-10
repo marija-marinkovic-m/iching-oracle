@@ -4,6 +4,14 @@ import { deleteReading, getReadings } from '../../db/instance.mjs'
 import { generateHexagramFromBinary } from '../hexagram/generateHexagram.mjs'
 import printHexagram from '../utils/print.mjs'
 
+/**
+ * Reads a page based on the given page ID.
+ *
+ * @param {Enquiry} enquiry - The enquiry object.
+ * @param {Array} readings - The array of readings.
+ * @param {string} pageId - The ID of the page to read.
+ * @returns {Promise<string>} - The page choice.
+ */
 const readPage = async (enquiry, readings, pageId) => {
   const reading = await readings.find(({ id }) => id === pageId)
   const hexagram = generateHexagramFromBinary(

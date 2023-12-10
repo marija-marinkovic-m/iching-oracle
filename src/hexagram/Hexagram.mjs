@@ -1,6 +1,10 @@
 import data from '../../temp/data.mjs'
 import logger from '../utils/logger.mjs'
 
+/**
+ * Represents a hexagram in the I Ching.
+ * @class
+ */
 class Hexagram {
   constructor (linesArray) {
     this.hexagram = linesArray

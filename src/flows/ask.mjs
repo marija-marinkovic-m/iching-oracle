@@ -5,6 +5,11 @@ import { storeReading } from '../../db/instance.mjs'
 import getChangeData from '../hexagram/getChangeData.mjs'
 import printHexagram from '../utils/print.mjs'
 
+/**
+ * Generates an answer based on the given question.
+ * @param {string} question - The question to generate an answer for.
+ * @returns {object} - An object containing the generated answer and the corresponding hexagram.
+ */
 function produceAnswer (question) {
   const hexagram = generateHexagram()
   const { change, changingLines } = getChangeData(hexagram)

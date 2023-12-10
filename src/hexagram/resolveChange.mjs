@@ -8,6 +8,12 @@ const DESCRIPTIONS = {
   6: 'All changing lines! Only the transformed hexagram applies!'
 }
 
+/**
+ * Returns the position of the prevailing line in a hexagram.
+ *
+ * @param {object} hexagram - The hexagram object.
+ * @returns {number|undefined} - The position of the prevailing line, or undefined if not found.
+ */
 export const getPrevailingLine = (hexagram) => {
   const changesLength = hexagram.changes.length
 

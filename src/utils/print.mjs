@@ -1,6 +1,11 @@
 import chalk from 'chalk'
 import getChangeData from '../hexagram/getChangeData.mjs'
 
+/**
+ * Prints the hexagram information.
+ *
+ * @param {object} hexagram - The hexagram object.
+ */
 const printHexagram = (hexagram) => {
   const { change, changingLines } = getChangeData(hexagram)
 

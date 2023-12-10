@@ -41,6 +41,17 @@ const getDB = async () => {
   }
 }
 
+/**
+ * Stores a reading in the database.
+ * @param {Object} reading - The reading object to be stored.
+ * @param {string} reading.id - The ID of the reading.
+ * @param {string} reading.hexbinStr - The hexbin string of the reading.
+ * @param {string} reading.kingWen - The King Wen sequence of the reading.
+ * @param {string} reading.changingLines - The changing lines of the reading.
+ * @param {string} reading.question - The question associated with the reading.
+ * @param {string} reading.createdAt - The creation date of the reading.
+ * @returns {Promise<Object>} - A promise that resolves to the stored reading object.
+ */
 export const storeReading = async (reading) => {
   const db = await getDB()
   const { id, hexbinStr, kingWen, changingLines, question, createdAt } = reading

@@ -11,6 +11,11 @@ export const resolveSeparation = (numberOfStalks) => {
   return observer + westRemainder + eastRemainder > 5 ? 2 : 3
 }
 
+/**
+ * Resolves the line of a hexagram based on the number of stalks drawn.
+ * @returns {Object} The resolved line object.
+ * @throws {Error} If something goes wrong during the resolution process.
+ */
 const resolveLine = () => {
   let numberOfStalks = NUMBER_OF_STALKS - 1
 
