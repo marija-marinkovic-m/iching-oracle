@@ -2,7 +2,7 @@ import chalk from 'chalk'
 
 import { deleteReading, getReadings } from '../../db/instance.mjs'
 import { generateHexagramFromBinary } from '../hexagram/generateHexagram.mjs'
-import printHexagram from '../print.mjs'
+import printHexagram from '../utils/print.mjs'
 
 const readPage = async (enquiry, readings, pageId) => {
   const reading = await readings.find(({ id }) => id === pageId)

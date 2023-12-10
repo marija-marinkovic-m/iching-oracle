@@ -1,5 +1,5 @@
 import data from '../../temp/data.mjs'
-import logger from '../logger.mjs'
+import logger from '../utils/logger.mjs'
 
 class Hexagram {
   constructor (linesArray) {

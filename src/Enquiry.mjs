@@ -1,4 +1,5 @@
 import inquirer from 'inquirer'
+import chalck from 'chalk'
 
 class Enquiry {
   ASK_KEY = 'ask'
@@ -13,7 +14,7 @@ class Enquiry {
     ask: '❔ Ask a question',
     read: '📖 Read Previous Answers',
     backRead: '👈 Back To Reading List',
-    delete: '🗑️ Delete Entry?',
+    delete: '🗑️  Delete Entry?',
     main: '🏠 Main Menu',
     quit: '❌ Quit',
     yes: 'Yes'
@@ -54,7 +55,7 @@ class Enquiry {
         type: 'input',
         name: 'question',
         message: 'What is your question?'
-      }).then(prompt => {
+      }).then((prompt) => {
         if (!prompt?.question) {
           reject(new Error('You must provide a question.'))
           return
@@ -67,7 +68,7 @@ class Enquiry {
     })
   }
 
-  getIsStoreAnswer = (answer) => {
+  getIsStoreAnswer = () => {
     return new Promise((resolve, reject) => {
       this.prompt({
         type: 'list',
@@ -90,10 +91,15 @@ class Enquiry {
         type: 'list',
         name: 'reading',
         message: 'Which reading do you want to read?',
-        choices: readingList.map(({ id, question }) => ({
-          name: question,
-          value: id
-        })).concat([this.mappings.main, this.mappings.quit])
+        choices: readingList
+          .map(({ id, question, createdAt }) => {
+            createdAt = new Date(createdAt).toLocaleDateString()
+            return {
+              name: `✔️ ${createdAt}: ${chalck.bold(question)}`,
+              value: id
+            }
+          })
+          .concat([this.mappings.main, this.mappings.quit])
       }).then((reply) => {
         if (reply.reading === this.mappings.quit) {
           reject(new Error('👋 Have a great day!'))
@@ -116,7 +122,12 @@ class Enquiry {
         type: 'list',
         name: 'choice',
         message: 'What would you like to do?',
-        choices: [this.mappings.backRead, this.mappings.main, this.mappings.delete, this.mappings.quit]
+        choices: [
+          this.mappings.backRead,
+          this.mappings.main,
+          this.mappings.delete,
+          this.mappings.quit
+        ]
       }).then((reply) => {
         switch (reply.choice) {
           case this.mappings.backRead:

@@ -1,5 +1,5 @@
 import sqlite3 from 'sqlite3'
-import logger from '../src/logger.mjs'
+import logger from '../src/utils/logger.mjs'
 
 let db
 

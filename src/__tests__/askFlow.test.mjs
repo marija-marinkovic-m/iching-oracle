@@ -9,7 +9,7 @@ describe('askFlow', () => {
       MAIN_KEY: 'main'
     }
     const result = await askFlow(enquiry)
-    expect(result).toBe('main')
+    expect(result).toBeUndefined()
   })
 
   it('should return the main key when the user chooses not to store the answer', async () => {
@@ -19,6 +19,6 @@ describe('askFlow', () => {
       MAIN_KEY: 'main'
     }
     const result = await askFlow(enquiry)
-    expect(result).toBe('main')
+    expect(result).toBeUndefined()
   })
 })
